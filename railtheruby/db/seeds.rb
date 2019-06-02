@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# use of gem faker
+# so it can be anything. we have to mention the types while creating it
+
+20.times do
+    User.create do |user|
+        user.name = Faker::Name.name
+        user.email = Faker::Internet.email
+        user.logged_in = true
+    end
+end
+
+
+20.times do
+    User.create do |user|
+        user.name = Faker::Name.name
+        user.email = Faker::Internet.email
+        user.logged_in = false
+    end
+end
